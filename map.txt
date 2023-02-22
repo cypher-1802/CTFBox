@@ -1,0 +1,39 @@
+**PLAN COMPLETED**
+==remember to configure dockerfile==
+
+Inside Every challenge there will be:
+1. bash_rc : runs as soon as user is logged in
+2. challengeFile
+3. dockerfile
+4. build script
+
+build script + challengeFile -> dockerfile -> bash_rc
+
+* before setting bash_rc remember to complete the docker configuration. i.e., docker build etc...
+* make build executable - done!
+
+Preserver configuration:
+docker image build . -t challenge$i     #builds image  => done
+
+bash_rc commands:
+docker run -it --rm --entrypoint /bin/bash challenge$i             #creates container from that image
+
+#ISSUES (Solved)
+i) ./build.sh not running - solved
+ii) opening bash script - done
+iii) adding docker to groups repeatedly - cron?
+iv) Better prompt? - got it!
+v) Complete exit from server? - YESS!! done
+vi) Script for user creation..necessary? - dudududone!
+vii) Ctrl Z for exiting docker? - nope!
+
+
+
+-> NEW USER SETUP Script
+1. Creating new user :-
+useradd -m <username>
+passwd <username>
+usermod -aG sudo <username>
+
+2. Adding challengeFile, dockerfile(personalised) and build script
+(Store all files in root)
